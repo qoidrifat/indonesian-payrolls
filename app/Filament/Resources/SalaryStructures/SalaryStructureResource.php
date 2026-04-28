@@ -20,7 +20,13 @@ class SalaryStructureResource extends Resource
 {
     protected static ?string $model = SalaryStructure::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBanknotes;
+
+    protected static ?string $navigationLabel = 'Struktur Gaji';
+
+    protected static ?string $modelLabel = 'Struktur Gaji';
+
+    protected static ?string $pluralModelLabel = 'Struktur Gaji';
 
     public static function form(Schema $schema): Schema
     {

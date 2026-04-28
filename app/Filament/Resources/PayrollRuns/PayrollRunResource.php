@@ -18,7 +18,13 @@ class PayrollRunResource extends Resource
 {
     protected static ?string $model = PayrollRun::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCalculator;
+
+    protected static ?string $navigationLabel = 'Proses Penggajian';
+
+    protected static ?string $modelLabel = 'Proses Penggajian';
+
+    protected static ?string $pluralModelLabel = 'Proses Penggajian';
 
     public static function form(Schema $schema): Schema
     {

@@ -18,7 +18,13 @@ class PayrollPeriodResource extends Resource
 {
     protected static ?string $model = PayrollPeriod::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCalendarDays;
+
+    protected static ?string $navigationLabel = 'Periode Penggajian';
+
+    protected static ?string $modelLabel = 'Periode Penggajian';
+
+    protected static ?string $pluralModelLabel = 'Periode Penggajian';
 
     public static function form(Schema $schema): Schema
     {
