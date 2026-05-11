@@ -1,0 +1,81 @@
+@import url('https://fonts.bunny.net/css?family=plus-jakarta-sans:400,500,600,700,800|inter:400,500,600,700|jetbrains-mono:400,500');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --c-bg: 250 250 252;
+        --c-bg-elev: 255 255 255;
+        --c-text: 24 24 27;
+        --c-text-soft: 82 82 91;
+        --c-border: 228 228 231;
+        --c-accent-from: 99 102 241;
+        --c-accent-via: 139 92 246;
+        --c-accent-to: 34 211 238;
+    }
+    .dark {
+        --c-bg: 9 9 11;
+        --c-bg-elev: 24 24 27;
+        --c-text: 244 244 245;
+        --c-text-soft: 161 161 170;
+        --c-border: 39 39 42;
+    }
+    html { font-feature-settings: 'cv02','cv03','cv04','cv11'; }
+    body {
+        @apply font-sans antialiased text-surface-900 dark:text-surface-50 bg-surface-50 dark:bg-surface-950;
+    }
+}
+
+@layer components {
+    .card {
+        @apply rounded-2xl border border-surface-200/70 bg-white/80 dark:border-surface-800/80 dark:bg-surface-900/70 backdrop-blur-xl shadow-card;
+    }
+    .glass {
+        @apply rounded-2xl border border-white/20 bg-white/40 dark:bg-surface-900/40 backdrop-blur-2xl;
+    }
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500;
+    }
+    .btn-primary {
+        @apply btn text-white bg-gradient-to-r from-brand-600 via-violet-600 to-cyan-500 hover:from-brand-500 hover:via-violet-500 hover:to-cyan-400 shadow-glow;
+    }
+    .btn-secondary {
+        @apply btn bg-surface-100 text-surface-900 hover:bg-surface-200 dark:bg-surface-800 dark:text-surface-100 dark:hover:bg-surface-700;
+    }
+    .btn-ghost {
+        @apply btn text-surface-700 hover:bg-surface-100 dark:text-surface-300 dark:hover:bg-surface-800;
+    }
+    .btn-danger {
+        @apply btn text-white bg-gradient-to-r from-rose-600 to-pink-600 hover:opacity-95;
+    }
+    .input {
+        @apply w-full rounded-xl border-surface-300 bg-white text-surface-900 placeholder:text-surface-400 focus:border-brand-500 focus:ring-brand-500 dark:bg-surface-900 dark:text-surface-100 dark:border-surface-700;
+    }
+    .label { @apply block text-sm font-medium text-surface-700 dark:text-surface-300; }
+    .chip {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ring-inset;
+    }
+    .chip-indigo { @apply chip bg-brand-50 text-brand-700 ring-brand-200 dark:bg-brand-500/10 dark:text-brand-300 dark:ring-brand-500/30; }
+    .chip-emerald { @apply chip bg-emerald-50 text-emerald-700 ring-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-300 dark:ring-emerald-500/30; }
+    .chip-amber { @apply chip bg-amber-50 text-amber-700 ring-amber-200 dark:bg-amber-500/10 dark:text-amber-300 dark:ring-amber-500/30; }
+    .chip-rose { @apply chip bg-rose-50 text-rose-700 ring-rose-200 dark:bg-rose-500/10 dark:text-rose-300 dark:ring-rose-500/30; }
+    .chip-slate { @apply chip bg-surface-100 text-surface-700 ring-surface-200 dark:bg-surface-800 dark:text-surface-300 dark:ring-surface-700; }
+    .table-base {
+        @apply min-w-full divide-y divide-surface-200 dark:divide-surface-800 text-sm;
+    }
+    .table-base thead th {
+        @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-surface-500 dark:text-surface-400;
+    }
+    .table-base tbody td { @apply px-4 py-3 text-surface-800 dark:text-surface-200; }
+    .table-base tbody tr:hover { @apply bg-surface-50/60 dark:bg-surface-800/40; }
+    .gradient-text {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-violet-600 to-cyan-500;
+    }
+    .skeleton {
+        @apply rounded bg-gradient-to-r from-surface-200 via-surface-100 to-surface-200 dark:from-surface-800 dark:via-surface-700 dark:to-surface-800 bg-[length:200%_100%] animate-shimmer;
+    }
+}
+
+::selection { background: rgba(99,102,241,0.25); }
